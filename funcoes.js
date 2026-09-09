@@ -13,13 +13,14 @@
 // console.log(somar(2, 3));
 
 // Arrow
-let somar = (a, b) => a + b;
+let somar = (a, b) => {
+  return a + b;
+};
 let subtrair = (a, b) => a - b;
 
 let valor1 = 4;
 let valor2 = 3;
-let resultado = somar(valor1, valor2);
-console.log(resultado);
+console.log(somar(valor1, valor2));
 
 let calculadora = (a, b, operacao) => {
   return operacao(a, b);
@@ -28,9 +29,17 @@ let calculadora = (a, b, operacao) => {
 // callback
 let r1 = calculadora(valor1, valor2, somar);
 let r2 = calculadora(valor1, valor2, subtrair);
-calculadora(valor1, valor2, (a, b) => {
+let multiplicacaoDivisao = (a, b) => {
   if (a == 0) {
     a = 1;
   }
   return (a + b) / 2;
-});
+};
+calculadora(valor1, valor2, multiplicacaoDivisao);
+
+let v1 = 1;
+let v2 = 2;
+let operador = '+';
+if (operador == '+') {
+  v1 + v2;
+}
